@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 
 const userStyle ={
     border: '2px solid yellow',
@@ -13,6 +13,15 @@ const userStyle ={
 
 const UserDetails = () => {
     const user = useLoaderData()
+
+
+    // let params = useParams()
+    // console.log(params)
+
+    const {userId} = useParams()
+    console.log(userId)
+
+
     console.log(user)
     const {address,company,username,website} = user
     return (

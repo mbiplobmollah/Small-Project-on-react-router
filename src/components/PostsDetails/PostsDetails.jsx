@@ -1,7 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 
 const PostsDetails = () => {
+    const navigate = useNavigate();
+    const handleNavigate = () =>{
+        navigate(-1)
+    }
     const post = useLoaderData();
     return (
         <div style={{border:'3px solid orange',
@@ -12,6 +16,7 @@ const PostsDetails = () => {
         }}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
+            <button onClick={handleNavigate}>Go Back</button>
         </div>
     );
 };
